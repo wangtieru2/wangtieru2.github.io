@@ -1,107 +1,177 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的名字 | 个人学术主页</title>
-    
-    <!-- 引入 Bootstrap CSS 提升样式 -->
+    <title>Your Name | Academic Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- 引入 FontAwesome 图标 (用于显示邮件、Google Scholar等图标) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
-        .sidebar { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .profile-img { width: 100%; border-radius: 10px; margin-bottom: 20px; }
-        .content-section { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h2 { border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px; color: #0056b3; }
-        .pub-title { font-weight: bold; }
-        .pub-authors { color: #555; }
-        .pub-venue { font-style: italic; color: #007bff; }
-        .social-links a { font-size: 24px; margin-right: 15px; color: #6c757d; transition: 0.3s; }
-        .social-links a:hover { color: #007bff; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            padding-top: 60px;
+        }
+
+        .sidebar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 60px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 85%;
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 25px;
+            border: 4px solid #f8f9fa;
+            transition: 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+
+        .content-section {
+            padding: 0 20px 40px 20px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-bottom: 1.5px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pub-item {
+            margin-bottom: 25px;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: block;
+            color: #111;
+        }
+
+        .pub-authors {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .pub-venue {
+            font-style: italic;
+            color: #0056b3;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .email-link {
+            color: #444;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .email-link:hover {
+            color: #007bff;
+        }
+
+        .social-links a {
+            font-size: 1.6rem;
+            margin: 0 12px;
+            color: #bbb;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: relative;
+                top: 0;
+                margin-bottom: 50px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-<div class="container my-5">
-    <div class="row">
-        <!-- 左侧栏：个人信息 -->
-        <div class="col-md-4">
-            <div class="sidebar text-center">
-                <!-- 替换为你的照片链接 -->
-                <img src="https://via.placeholder.com/250" alt="Profile Picture" class="profile-img">
-                <h3>你的名字</h3>
-                <p class="text-muted">博士研究生 / 助理教授</p>
-                <p>某某大学 某某学院</p>
-                <hr>
-                <div class="social-links">
-                    <a href="mailto:your-email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://scholar.google.com/" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                    <a href="https://github.com/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-                <div class="mt-4 text-start">
-                    <h5>联系方式</h5>
-                    <small>北京市海淀区某某路xx号<br>邮编：100000</small>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <img src="https://via.placeholder.com/300" alt="Your Name" class="profile-img">
+                    <h3 class="fw-bold">Tieru Wang</h3>
+                    <p class="text-secondary mb-1">Ph.D. Researcher</p>
+                    <p class="small">Beijing University of Posts and Telecommunications</p>
 
-        <!-- 右侧栏：主要内容 -->
-        <div class="col-md-8">
-            <!-- 个人简介 -->
-            <div class="content-section">
-                <h2>关于我</h2>
-                <p>你好！我是某某，目前在<strong>某某大学</strong>从事<strong>某某领域</strong>的研究。我的研究兴趣主要集中在人工智能、大数据分析以及它们在社会科学中的应用。</p>
-                <p>在加入某某实验室之前，我于20xx年获得了某某大学的学士学位。我曾获得过某某奖学金，并在某某顶级会议上发表过多篇论文。</p>
-            </div>
+                    <hr style="width: 50%; margin: 20px auto;">
 
-            <!-- 研究方向 -->
-            <div class="content-section">
-                <h2>研究方向</h2>
-                <ul>
-                    <li><strong>方向一：</strong> 简要描述该方向的研究内容。</li>
-                    <li><strong>方向二：</strong> 简要描述该方向的研究内容。</li>
-                    <li><strong>方向三：</strong> 简要描述该方向的研究内容。</li>
-                </ul>
-            </div>
+                    <div class="mb-4">
+                        <a href="mailto:your-email@bupt.edu.cn" class="email-link">
+                            <i class="fas fa-envelope me-2"></i>wangtieru@bupt.edu.cn
+                        </a>
+                    </div>
 
-            <!-- 发表论文 -->
-            <div class="content-section">
-                <h2>发表论文</h2>
-                <div class="mb-4">
-                    <div class="pub-title">1. 一篇非常厉害的学术论文标题</div>
-                    <div class="pub-authors"><strong>你的名字</strong>, 合作者A, 合作者B</div>
-                    <div class="pub-venue">CVPR 2024 (Oral)</div>
-                    <a href="#" class="btn btn-sm btn-outline-primary mt-1">PDF</a> <a href="#" class="btn btn-sm btn-outline-secondary mt-1">Code</a>
-                </div>
-                
-                <div class="mb-4">
-                    <div class="pub-title">2. 另一篇具有影响力的期刊论文标题</div>
-                    <div class="pub-authors">合作者C, <strong>你的名字</strong>, 合作者D</div>
-                    <div class="pub-venue">Nature Machine Intelligence, 2023</div>
-                    <a href="#" class="btn btn-sm btn-outline-primary mt-1">PDF</a>
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://github.com/wangtieru2/" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <!-- 教育经历 -->
-            <div class="content-section">
-                <h2>教育经历</h2>
-                <ul>
-                    <li><strong>博士</strong>, 某某大学, 2021 - 至今</li>
-                    <li><strong>硕士</strong>, 某某大学, 2018 - 2021</li>
-                    <li><strong>学士</strong>, 某某大学, 2014 - 2018</li>
-                </ul>
+            <!-- Main Content -->
+            <div class="col-md-8">
+
+                <!-- Research Interests -->
+                <div class="content-section">
+                    <h2>Research Interests</h2>
+                    <ul class="ps-3">
+                        <li><strong>Reinforcement Learning:</strong> Sequence Modeling, Offline RL.</li>
+                        <li><strong>Large Language Models:</strong> Reasoning, MLLMs.</li>
+                    </ul>
+                </div>
+
+                <!-- Publications -->
+                <div class="content-section">
+                    <h2>Selected Publications</h2>
+
+                    <div class="pub-item">
+                        <span class="pub-title">Offline Reinforcement Learning with Adaptive Feature Fusion</span>
+                        <span class="pub-authors"><strong>Tieru Wang</strong>, Kunbao Wu, Guoshun Nan</span><br>
+                        <span class="pub-venue">ICLR 2026</span><br>
+                        <a href="#" class="btn btn-sm btn-outline-dark mt-2 py-0 px-2"
+                            style="font-size: 0.8rem;">PDF</a>
+                    </div>
+
+                    <div class="pub-item">
+                        <span class="pub-title">Trajectory Generation with Conservative Value Guidance for Offline
+                            Reinforcement Learning</span>
+                        <span class="pub-authors"><strong>Tieru Wang</strong>, Kunbao Wu, Guoshun Nan</span><br>
+                        <span class="pub-venue">ICLR 2026</span><br>
+                        <a href="#" class="btn btn-sm btn-outline-dark mt-2 py-0 px-2"
+                            style="font-size: 0.8rem;">PDF</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-</div>
-
-<footer class="text-center py-4 text-muted">
-    &copy; 2024 你的名字. Powered by GitHub Pages.
-</footer>
 
 </body>
+
 </html>
